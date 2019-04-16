@@ -1,10 +1,21 @@
 import React, { Component } from "react";
 import HelloWorld from "./HelloWorld";
+import { createStore } from 'redux';
+
+const store = createStore(reducer);
+
 
 class App extends Component {
-  state = {
-    tech: "React"
-  };
+  constructor() {
+    super();
+    // this.state = {
+    //   tech: "Redux"
+    // }
+  }
+
+
+
+
   render() {
     return <HelloWorld tech={this.state.tech} />;
   }
