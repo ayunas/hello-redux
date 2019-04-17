@@ -2,23 +2,27 @@ import React, { Component } from "react";
 import HelloWorld from "./HelloWorld";
 import { createStore } from 'redux';
 import reducer from './reducers';
+import store from './store';
+import ButtonGroup from './ButtonGroup.js';
 
-const initialState = { tech: "React" };
-const store = createStore(reducer, initialState);
+
 
 class App extends Component {
-  constructor() {
-    super();
-    // this.state = {
-    //   tech: "Redux"
-    // }
-  }
-
-
-
+  // constructor() {
+  //   super();
+  //   // this.state = {
+  //   //   tech: "Redux"
+  //   // }
+  // }
 
   render() {
-    return <HelloWorld tech={store.getState().tech} />;
+    return (
+      <div>
+        <HelloWorld key={1} tech={store.getState().tech} />
+        <ButtonGroup key={2} technologies={['React','Python','React-redux']} />
+      </div>
+    )
+      
   }
 }
 
