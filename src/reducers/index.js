@@ -1,35 +1,15 @@
-const reducer = (state) => {
-    return state;
-}
-
-export default reducer;
-
-//Action Maker
-const setTechnology = (text) => {
-    return {
-        type: 'SET_TECHNOLOGY',
-        tech: text
+const reducer = (state, action) => {
+    console.log(action);
+    switch (action.type) {
+        case "SET_TECHNOLOGY":
+        return {
+            ...state,
+            tech: action.tech
+        };
+        
+        default:
+            return state;
     }
 }
 
-//Actions
-// const ReactAction = {
-//     type: 'SET_TECHNOLOGY',
-//     payload: {
-//         text: "React"
-//     }
-// }
-
-// const ReactReduxAction = {
-//     type: 'SET_TECHNOLOGY',
-//     payload: {
-//         text: 'React-Redux'
-//     }
-// }
-
-// const PythonAction = {
-//     type: 'SET_TECHNOLOGY',
-//     payload: {
-//         text: 'Python'
-//     }
-// }
+export default reducer;
